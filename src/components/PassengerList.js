@@ -19,7 +19,7 @@ function PassengerList() {
 
   const fetchPassengers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/passengers");
+      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers");
       setPassengers(response.data);
       setFilteredPassengers(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ function PassengerList() {
 
   const handleAdd = async () => {
     try {
-      await axios.post("http://localhost:8080/passenger", {
+      await axios.post("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passenger", {
         ...newPassenger,
         city: newPassenger.city.id
           ? { id: parseInt(newPassenger.city.id) }
@@ -49,7 +49,7 @@ function PassengerList() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8080/passengers/${editPassenger.id}`, {
+      await axios.put(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers/${editPassenger.id}`, {
         ...editPassenger,
         city:
           editPassenger.city && editPassenger.city.id
@@ -65,7 +65,7 @@ function PassengerList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/passengers/${id}`);
+      await axios.delete(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers/${id}`);
       fetchPassengers();
     } catch (error) {
       console.error("Error deleting passenger:", error);
