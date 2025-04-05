@@ -18,7 +18,7 @@ function AircraftList() {
 
   const fetchAircrafts = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/aircrafts");
+      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircraft/aircrafts");
       setAircrafts(response.data);
       setFilteredAircrafts(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function AircraftList() {
 
   const handleAdd = async () => {
     try {
-      await axios.post("http://localhost:8080/aircraft", newAircraft);
+      await axios.post("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircraft", newAircraft);
       fetchAircrafts();
       setNewAircraft({ type: "", airlineName: "", numberOfPassengers: 0 });
     } catch (error) {
@@ -39,7 +39,7 @@ function AircraftList() {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:8080/aircrafts/${editAircraft.id}`,
+        `http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts/${editAircraft.id}`,
         editAircraft
       );
       fetchAircrafts();
@@ -51,7 +51,7 @@ function AircraftList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/aircrafts/${id}`);
+      await axios.delete(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts/${id}`);
       fetchAircrafts();
     } catch (error) {
       console.error("Error deleting aircraft:", error);
