@@ -18,7 +18,7 @@ function AircraftList() {
 
   const fetchAircrafts = async () => {
     try {
-      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircraft/aircrafts");
+      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts");
       setAircrafts(response.data);
       setFilteredAircrafts(response.data);
     } catch (error) {
