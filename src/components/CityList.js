@@ -18,7 +18,7 @@ function CityList() {
 
   const fetchCities = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/cities");
+      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/cities");
       setCities(response.data);
       setFilteredCities(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function CityList() {
 
   const handleAdd = async () => {
     try {
-      await axios.post("http://localhost:8080/city", newCity);
+      await axios.post("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/city", newCity);
       fetchCities();
       setNewCity({ name: "", state: "", population: 0 });
     } catch (error) {
@@ -38,7 +38,7 @@ function CityList() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8080/cities/${editCity.id}`, editCity);
+      await axios.put(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/cities/${editCity.id}`, editCity);
       fetchCities();
       setEditCity(null);
     } catch (error) {
@@ -48,7 +48,7 @@ function CityList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/cities/${id}`);
+      await axios.delete(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/cities/${id}`);
       fetchCities();
     } catch (error) {
       console.error("Error deleting city:", error);
