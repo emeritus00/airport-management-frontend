@@ -18,7 +18,7 @@ function AirportList() {
 
   const fetchAirports = async () => {
     try {
-      const response = await axios.get("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airports");
+      const response = await axios.get("http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airports");
       setAirports(response.data);
       setFilteredAirports(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function AirportList() {
 
   const handleAdd = async () => {
     try {
-      await axios.post("http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airport", {
+      await axios.post("http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airport", {
         ...newAirport,
         city: newAirport.city.id ? { id: parseInt(newAirport.city.id) } : null,
       });
@@ -41,7 +41,7 @@ function AirportList() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airports/${editAirport.id}`, {
+      await axios.put(`http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airports/${editAirport.id}`, {
         ...editAirport,
         city:
           editAirport.city && editAirport.city.id
@@ -57,7 +57,7 @@ function AirportList() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airports/${id}`);
+      await axios.delete(`http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airports/${id}`);
       fetchAirports();
     } catch (error) {
       console.error("Error deleting airport:", error);

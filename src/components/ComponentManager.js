@@ -48,7 +48,7 @@ function ComponentManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const baseUrl = "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com";
+    const baseUrl = "http://app-alb-918023355.ca-central-1.elb.amazonaws.com";
     const selectedComponent =
       components.find((c) => c.value === component) || components[0];
     try {
