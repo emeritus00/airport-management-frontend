@@ -69,7 +69,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.post).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircraft",
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/aircraft",
       {
         type: "Boeing 737",
         airlineName: "Air Canada",
@@ -117,7 +117,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/aircrafts"
     );
   });
 
@@ -152,7 +152,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts/aircraft/Air%20Canada"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/aircrafts/aircraft/Air%20Canada"
     );
   });
 
@@ -187,7 +187,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airports/airport/John%20F.%20Kennedy"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airports/airport/John%20F.%20Kennedy"
     );
   });
 
@@ -215,7 +215,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/cities/name/New%20York"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/cities/name/New%20York"
     );
   });
 
@@ -249,7 +249,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers/1"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/passengers/1"
     );
   });
 
@@ -283,7 +283,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers/passenger/Doe"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/passengers/passenger/Doe"
     );
   });
 
@@ -317,7 +317,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.put).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/airports/1",
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/airports/1",
       {
         name: "JFK Updated",
         code: "JFK",
@@ -346,7 +346,7 @@ describe("ComponentManager", () => {
       ).toBeInTheDocument();
     });
     expect(mockAxios.delete).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/passengers/1"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/passengers/1"
     );
   });
 
@@ -372,7 +372,7 @@ describe("ComponentManager", () => {
       expect(screen.getByText("Error: Not found")).toBeInTheDocument();
     });
     expect(mockAxios.get).toHaveBeenCalledWith(
-      "http://http://app-alb-1165913258.ca-central-1.elb.amazonaws.com/aircrafts/aircraft/Invalid"
+      "http://app-alb-918023355.ca-central-1.elb.amazonaws.com/aircrafts/aircraft/Invalid"
     );
   });
 });
